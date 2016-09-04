@@ -1,0 +1,124 @@
+// Empty topbar to hide animation slidein
+.emptybar
+  height: 60px
+  width: 100%
+  background-color: orange
+
+// Wrapper for current weather
+.forecast-container
+  position: relative
+  font-family: 'Open Sans', sans-serif
+  background: white
+  max-height: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  border-radius: 0 0 0.3em 0.3em
+  border-top: 1.5px solid #444
+  box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.4)
+  z-index: -1
+
+
+  .sectionLocation
+    #location
+      font-size: 1.3em
+      margin-bottom: 0.10em
+    #region
+      font-size: 1em
+      text-align: center
+      margin: 0
+
+  .weather-icons
+    width: 80px
+    height: 60px
+    margin: 0 auto
+
+// Data colums
+.flex-container
+  display: flex
+  flex-direction: row
+  white-space: nowrap
+  margin-left: 20px
+  margin-right: 20px
+
+  ul
+    font-size: 0.8rem
+    width: 100%
+    list-style: none
+    text-align: center
+    line-height: 1.5em
+    padding: 8px
+
+    // Hides placeholder elements from first column
+    &:nth-child(1) :nth-child(-n+3)
+      visibility: hidden
+
+    // Styling for column items
+    li:nth-child(2)
+      font-weight: 600
+      font-size: 1.3em
+    li:nth-child(3)
+      padding-bottom: 15px
+      font-style: italic
+      font-size: 1.1em
+    li:nth-child(11)
+      padding-top: 15px
+
+  // Styling for responsive wrap
+  .second-ul
+    display: none
+    &:nth-child(7) :nth-child(-n+3)
+      visibility: hidden
+  .third-ul
+    display: none
+    &:nth-child(3) :nth-child(-n+3)
+      visibility: hidden
+    &:nth-child(5) :nth-child(-n+3)
+      visibility: hidden
+    &:nth-child(9) :nth-child(-n+3)
+      visibility: hidden
+
+  // Column background coloring
+  .cast
+    &:nth-child(4n)
+      background: rgba(120,178,232,0.10)
+      border-radius: 0.5em
+
+  .weather-icons
+    img
+      width: 80px
+      height: 60px
+
+  // Mobile responsive settings
+  @media screen and (max-width: 1170px)
+    flex-wrap: wrap
+    ul
+      width: calc(25% - 40px)
+    .second-ul
+      display: block
+
+  @media screen and (max-width: 1000px)
+    flex-wrap: wrap
+    ul
+      width: calc(50% - 40px)
+    .third-ul
+      display: block
+    .cast
+      &:nth-child(even)
+        background: rgba(120,178,232,0.10)
+
+
+footer
+  font-weight: 500
+  font-size: 0.8em
+  color: #666
+  padding-bottom: 10px
+
+  a
+    color: #666
+    text-decoration: none
+    font-weight: bold
+    &:hover
+      color: rgba(53,145,232,1)
+  .footer-link
+    font-size: 0.8em

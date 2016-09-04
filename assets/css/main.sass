@@ -1,0 +1,349 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:500'
+@import '/assets/img/icons/open-iconic/font/css/open-iconic.min.css'
+@import '/assets/css/forecast.css'
+body
+  background: orange
+  box-sizing: border-box
+  overflow-y: hidden
+
+  // Tooltip styling
+  .tooltip
+    position: relative
+    display: inline-block
+    width: 135px
+    margin: auto
+    max-height: 100px
+
+  .tooltip .tooltiptext
+    width: 360px
+    background: rgba(120,178,232,1)
+    color: #FFF
+    text-align: center
+    padding: 5px 0
+    border-radius: 6px
+    position: absolute
+    z-index: 1
+    bottom: 70%
+    left: 0
+    margin-left: -60px
+    opacity: 0
+    transition: opacity 1s
+  .tooltip .tooltiptext::after
+    content: ""
+    position: absolute
+    top: 100%
+    left: 50%
+    margin-left: -5px
+    border-width: 5px
+    border-style: solid
+    border-color: rgba(120,178,232,1) transparent transparent transparent
+
+  .tooltip:hover .tooltiptext
+    opacity: 1
+
+  // Empty topbar to hide animation slidein
+  .emptybar
+    height: 60px
+    width: 100%
+    background-color: orange
+
+
+  // Main wrapper
+  .container-wrap
+    margin: 0 auto
+    width: 700px
+    max-width: 60%
+    max-height: 45px
+    box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.4)
+    border-radius: 0.3em
+
+
+    // Navigation bar
+    .topbar
+      position: relative
+      font-family: 'Roboto', sans-serif
+      height: 45px
+      display: flex
+      justify-content: space-around
+      align-items: center
+      background: linear-gradient(to bottom, rgba(53,145,232,1) 0%,rgba(120,178,232,1) 48%,rgba(120,178,232,1) 80%,rgba(53,145,232,1) 100%)
+      border-radius: 0.3em 0.3em 0 0
+      z-index: 1
+
+
+      a
+        box-sizing: border-box
+        text-align: center
+        width: 100%
+        padding: 13.5px
+        text-decoration: none
+        color: #FFF
+
+        &:hover
+          background: rgba(53,145,232,1)
+
+      .logo
+        flex-grow: 1
+        display: block
+        font-size: 1.1em
+        padding: 0 40px 0 40px
+      .panel
+        font-style: italic
+        font-weight: 400
+
+    // Wrapper for current weather
+    .main-weather-container
+      position: relative
+      font-family: 'Open Sans', sans-serif
+      background: white
+      max-height: 100%
+      display: flex
+      flex-direction: column
+      align-items: center
+      border-radius: 0 0 0.3em 0.3em
+      border-top: 1.5px solid #444
+      box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.4)
+      z-index: -1
+
+
+      .sectionLocation
+        #location
+          font-size: 1.3em
+          margin-bottom: 0.20em
+        #region
+          font-size: 1em
+          text-align: center
+          margin-top: 0
+          margin-bottom: 0.5em
+
+      .sectionTemp
+        height: 130px
+        width: auto
+        #temp, #weather
+          text-align: center
+
+        #temp
+          font-size: 2.5em
+          margin-bottom: 0.2em
+          cursor: pointer
+
+        #weather
+          margin-top: 0
+          font-size: 1em
+
+
+        .compass-container
+          max-width: 100%
+          position: absolute
+          bottom: 54%
+          right: 17%
+
+          .compass
+            width: 150px
+            height: 150px
+            opacity: 0.4
+
+          #arrow
+            position: absolute
+            bottom: 40%
+            right: 35%
+
+            z-index: 1
+            transform: rotate(-45deg)
+            #windDeg
+              font-size: 38px
+              color: rgba(53,145,232,1)
+
+        .rainmeter
+          width: 30%
+          position: absolute
+          right: 54%
+          bottom: 68%
+          border-left: 1px solid black
+          transform: rotate(-90deg)
+
+          .amount
+            p
+              padding: 0 0 0 4px
+              margin: 0 0 5px 0
+              font-size: 1.1em
+          .rain-bar
+            background-color: rgba(53,145,232,1)
+            width: 0mm
+            height: 25px
+
+            .raintext
+              transform: rotate(90deg)
+              width: 100%
+              height: 100%
+
+              p
+                font-size: 0.5em
+                text-align: center
+                margin-top: 0
+                color: #FFF
+
+
+      .sectionDetails
+        margin: 60px 0
+        width: 50%
+
+        .table
+          border-collapse: collapse
+
+        tr:nth-child(odd)
+          background: rgba(120,178,232,0.15)
+
+        th, td
+          padding: 6px
+
+        th
+          text-align: left
+          padding-left: 15px
+          border-radius: 1em 0 0 1em
+          width: 40%
+
+        td
+
+          width: 50%
+          text-align: center
+          border-radius: 0 1em 1em 0
+    footer
+      font-weight: 500
+      font-size: 0.8em
+      color: #666
+      padding-bottom: 10px
+
+      a
+        color: #666
+        text-decoration: none
+        font-weight: bold
+        &:hover
+          color: rgba(53,145,232,1)
+      .footer-link
+        font-size: 0.8em
+
+  // Animations start
+  .slide-out
+    animation: out 2500ms ease-in-out forwards
+    transform-origin: top right
+
+    @keyframes out
+      0%
+      10%
+        transform: rotate(-1deg)
+      20%
+        transform: rotate(-1deg)
+      30%
+        transform: rotate(-1deg)
+      40%
+        transform: rotate(-8deg)
+
+      100%
+        transform: translateY(1000px)
+
+  .slideIn
+    animation: in 2500ms ease-in-out forwards
+
+    @keyframes in
+      0%
+
+        transform: translateY(-2000px)
+
+      100%
+        transform: translateY(0)
+
+
+
+
+  // Mobile responsive
+  @media screen and (max-width: 1100px)
+    overflow-y: visible
+    .container-wrap
+      .main-weather-container
+        .sectionTemp
+          margin-left: -20%
+          width: 25%
+          display: block
+          .tooltip
+            position: static
+            width: 100%
+            .tooltiptext
+              display: none
+
+          .compass-container
+            display: block
+            right: 23%
+            bottom: 56%
+
+
+          .rainmeter
+            display: none
+  @media screen and (max-width: 1000px)
+    .container-wrap
+      .main-weather-container
+
+        .sectionTemp
+          margin-left: 0
+          margin-top: 30px
+          margin-bottom: 80px
+          width: 100%
+          display: flex
+          flex-direction: column
+          align-items: center
+
+          .compass-container
+
+            position: relative
+            margin: 3% auto
+            bottom: initial
+            right: initial
+            #arrow
+              position: absolute
+              width: 40px
+
+
+        .sectionDetails
+          width: 80%
+
+          th
+            width: 65%
+
+  @media screen and (max-width: 845px)
+    .container-wrap
+      margin: 0 10px
+      width: auto
+      max-width: 100%
+
+      .main-weather-container
+        .sectionDetails
+          width: 50%
+
+  @media screen and (max-width: 450px)
+    .container-wrap
+      margin-top: 0
+      width: auto
+      max-width: 100%
+
+      .topbar
+        a
+          padding: 8px 2.5px
+          font-size: 0.8em
+
+        .logo
+          flex-grow: 1
+          display: block
+          font-size: 1em
+          padding: 0 10px 0 30px
+
+
+      .main-weather-container
+        .sectionDetails
+          width: 100%
+
+    .flex-container
+      margin-left: 5px
+      margin-right: 5px
+      ul
+        width: calc(50% - 5px)
+        padding: 0

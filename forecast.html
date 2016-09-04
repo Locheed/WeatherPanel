@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0">
+    <title>WeatherPanel</title>
+    <!-- Vendor CSS files. Not going to be minified or concanated. Remove if no need. -->
+    <link rel="stylesheet" href="assets/css/vendor/normalize.css">
+    <!-- End vendor CSS files -->
+    <!--build:css assets/css/main.min.css-->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!--endbuild-->
+  </head>
+
+  <body>
+    <div class="emptybar"></div>
+    <div class="container-wrap">
+      <div class="topbar">
+        <h1 class="logo">Weather<span class="panel">Panel</span></h1>
+        <a href="#" onclick="pageIndex()">Current weather</a>
+        <a href="#" onclick="pageForecast()">5 day forecast</a>
+      </div>
+
+      <div class="forecast-container slideIn">
+        <div class="sectionLocation">
+          <h2 id="location">No location found!</h2>
+          <h3 id="region">No region found!</h3>
+        </div>
+
+        <div class="flex-container">
+          <ul class="cats">
+            <li><img style="width: 80px; height: 60px;" src="assets/img/icons/44.png"></li>
+            <li>nönnö</li>
+            <li>nönnö</li>
+            <li>Wind</li>
+            <li>Weather</li>
+            <li>Rain &amp; Snow</li>
+            <li>Cloudiness</li>
+            <li>Pressure</li>
+            <li>Humidity</li>
+            <li>Visibility</li>
+            <li>Time of data</li>
+          </ul>
+          <ul class="cast">
+            <li><img class="weather-icons" src="assets/img/icons/44.png"></li>
+            <li class="temp bold">n/a</li>
+            <li class="date"></li>
+            <li class="wind">n/a</li>
+            <li class="weatherDesc">n/a</li>
+            <li class="rainSnow">n/a</li>
+            <li class="cloudiness">n/a</li>
+            <li class="pressure">n/a</li>
+            <li class="humidity">n/a</li>
+            <li class="visibility">n/a</li>
+            <li class="timeData">n/a</li>
+          </ul>
+          <ul class="cats third-ul">
+            <li><img style="width: 80px; height: 60px;" src="assets/img/icons/44.png"></li>
+            <li>nönnö</li>
+            <li>nönnö</li>
+            <li>Wind</li>
+            <li>Weather</li>
+            <li>Rain &amp; Snow</li>
+            <li>Cloudiness</li>
+            <li>Pressure</li>
+            <li>Humidity</li>
+            <li>Visibility</li>
+            <li>Time of data</li>
+          </ul>
+          <ul class="cast">
+            <li><img class="weather-icons" src="assets/img/icons/44.png"></li>
+            <li class="temp bold">n/a</li>
+            <li class="date"></li>
+            <li class="wind">n/a</li>
+            <li class="weatherDesc">n/a</li>
+            <li class="rainSnow">n/a</li>
+            <li class="cloudiness">n/a</li>
+            <li class="pressure">n/a</li>
+            <li class="humidity">n/a</li>
+            <li class="visibility">n/a</li>
+            <li class="timeData">n/a</li>
+          </ul>
+          <ul class="cats third-ul">
+            <li><img style="width: 80px; height: 60px;" src="assets/img/icons/44.png"></li>
+            <li>nönnö</li>
+            <li>nönnö</li>
+            <li>Wind</li>
+            <li>Weather</li>
+            <li>Rain &amp; Snow</li>
+            <li>Cloudiness</li>
+            <li>Pressure</li>
+            <li>Humidity</li>
+            <li>Visibility</li>
+            <li>Time of data</li>
+          </ul>
+          <ul class="cast">
+            <li><img class="weather-icons" src="assets/img/icons/44.png"></li>
+            <li class="temp bold">n/a</li>
+            <li class="date"></li>
+            <li class="wind">n/a</li>
+            <li class="weatherDesc">n/a</li>
+            <li class="rainSnow">n/a</li>
+            <li class="cloudiness">n/a</li>
+            <li class="pressure">n/a</li>
+            <li class="humidity">n/a</li>
+            <li class="visibility">n/a</li>
+            <li class="timeData">n/a</li>
+          </ul>
+          <ul class="cats second-ul">
+            <li><img style="width: 80px; height: 60px;" src="assets/img/icons/44.png"></li>
+            <li>nönnö</li>
+            <li>nönnö</li>
+            <li>Wind</li>
+            <li>Weather</li>
+            <li>Rain &amp; Snow</li>
+            <li>Cloudiness</li>
+            <li>Pressure</li>
+            <li>Humidity</li>
+            <li>Visibility</li>
+            <li>Time of data</li>
+          </ul>
+          <ul class="cast">
+            <li><img class="weather-icons" src="assets/img/icons/44.png"></li>
+            <li class="temp bold">n/a</li>
+            <li class="date"></li>
+            <li class="wind">n/a</li>
+            <li class="weatherDesc">n/a</li>
+            <li class="rainSnow">n/a</li>
+            <li class="cloudiness">n/a</li>
+            <li class="pressure">n/a</li>
+            <li class="humidity">n/a</li>
+            <li class="visibility">n/a</li>
+            <li class="timeData">n/a</li>
+          </ul>
+          <ul class="cats third-ul">
+            <li><img style="width: 80px; height: 60px;" src="assets/img/icons/44.png"></li>
+            <li>nönnö</li>
+            <li>nönnö</li>
+            <li>Wind</li>
+            <li>Weather</li>
+            <li>Rain &amp; Snow</li>
+            <li>Cloudiness</li>
+            <li>Pressure</li>
+            <li>Humidity</li>
+            <li>Visibility</li>
+            <li>Time of data</li>
+          </ul>
+          <ul class="cast">
+            <li><img class="weather-icons" src="assets/img/icons/44.png"></li>
+            <li class="temp bold">n/a</li>
+            <li class="date"></li>
+            <li class="wind">n/a</li>
+            <li class="weatherDesc">n/a</li>
+            <li class="rainSnow">n/a</li>
+            <li class="cloudiness">n/a</li>
+            <li class="pressure">n/a</li>
+            <li class="humidity">n/a</li>
+            <li class="visibility">n/a</li>
+            <li class="timeData">n/a</li>
+          </ul>
+        </div>
+        <footer>&copy; 2016 <a href="https://github.com/Locheed" target="_blank" rel="noreferrer">Mika Vesasto</a> | <span class="footer-link">Weather icons made by, <a href="http://www.deviantart.com/art/VClouds-Weather-Icons-179152045" target="_blank" rel="noreferrer">VClouds</a></span>.</footer>
+      </div>
+    </div>
+
+
+    <!--build:js assets/js/main.min.js-->
+    <script src="assets/js/forecast.js"></script>
+    <!--endbuild-->
+  </body>
+</html>

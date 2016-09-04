@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherPanel</title>
+    <!-- Vendor CSS files. Not going to be minified or concanated. Remove if no need. -->
+    <link rel="stylesheet" href="assets/css/vendor/normalize.css">
+    <!-- End vendor CSS files -->
+    <!--build:css assets/css/main.min.css-->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!--endbuild-->
+  </head>
+
+  <body>
+    <div class="emptybar"></div>
+    <div class="container-wrap">
+      <div class="topbar">
+        <h1 class="logo">Weather<span class="panel">Panel</span></h1>
+        <a href="#" onclick="pageIndex()">Current weather</a>
+        <a href="#" onclick="pageForecast()">5 day forecast</a>
+      </div>
+
+      <div class="main-weather-container slideIn">
+        <div class="sectionLocation">
+          <h2 id="location">No location found!</h2>
+          <h3 id="region">No region found!</h3>
+        </div>
+
+        <div class="sectionWeather">
+          <img src="assets/img/icons/44.png" id="icon">
+        </div>
+
+
+        <div class="sectionTemp">
+          <div class="tooltip">
+            <h2 id="temp" class="celcius" onclick="toggleTemp()">0</h2>
+            <h3 id="weather">N/A</h3>
+            <span class="tooltiptext">Click to change between celcius and fahrenheit</span>
+          </div>
+
+          <div class="compass-container">
+            <img class="compass" src="assets/img/icons/compass.svg">
+            <div id="arrow">
+              <span class="oi" id="windDeg" data-glyph="location" title="Wind degree" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="rainmeter">
+            <div class="amount"><p>Rain &amp; Snow</p></div>
+            <div class="rain-bar" id="rain-bar-amount"><div class="raintext"><p id="millimeters">0mm</p></div></div>
+          </div>
+        </div>
+
+
+        <div class="sectionDetails">
+          <table class="table">
+            <tr>
+              <th>Wind</th>
+              <td id="wind">N/A</td>
+            </tr>
+            <tr>
+              <th>Weather</th>
+              <td id="weatherDesc">N/A</td>
+            </tr>
+            <tr>
+              <th>Rain &amp; Snow</th>
+              <td id="rainSnow">N/A</td>
+            </tr>
+            <tr>
+              <th>Cloudiness</th>
+              <td id="cloudiness">N/A</td>
+            </tr>
+            <tr>
+              <th>Pressure</th>
+              <td id="pressure">N/A</td>
+            </tr>
+            <tr>
+              <th>Humidity</th>
+              <td id="humidity">N/A</td>
+            </tr>
+            <tr>
+              <th>Visibility</th>
+              <td id="visibility">N/A</td>
+            </tr>
+            <tr>
+              <th>Sunrise</th>
+              <td id="sunrise">N/A</td>
+            </tr>
+            <tr>
+              <th>Sunset</th>
+              <td id="sunset">N/A</td>
+            </tr>
+            <tr>
+              <th>Coordinates</th>
+              <td id="coordinates">N/A</td>
+            </tr>
+          </table>
+        </div>
+        <footer>&copy; 2016 <a href="https://github.com/Locheed" target="_blank" rel="noreferrer">Mika Vesasto</a> | <span class="footer-link">Weather icons made by, <a href="http://www.deviantart.com/art/VClouds-Weather-Icons-179152045" target="_blank" rel="noreferrer">VClouds</a></span>.</footer>
+      </div>
+    </div>
+
+
+    <!--build:js assets/js/main.min.js-->
+    <script src="assets/js/main.js"></script>
+    <!--endbuild-->
+  </body>
+</html>
