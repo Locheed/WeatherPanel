@@ -233,14 +233,6 @@ function pageForecast() {
   setTimeout(function() {
     window.location.href = "forecast.html";
 
-  }, 2400);
+  }, 800);
 
-};
-
-function pageIndex() {
-  toggleClass();
-  setTimeout(function() {
-    window.location.href = "index.html";
-
-  }, 2400);
 };

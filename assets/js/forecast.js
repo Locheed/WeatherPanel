@@ -213,19 +213,11 @@ function toggleClass() {
 };
 
 // After animation redirects page to a new page.
-function pageForecast() {
-  toggleClass();
-
-  setTimeout(function() {
-    window.location.href = "forecast.html";
-
-  }, 2400);
-};
 
 function pageIndex() {
   toggleClass();
   setTimeout(function() {
     window.location.href = "index.html";
 
-  }, 2400);
+  }, 800);
 };
