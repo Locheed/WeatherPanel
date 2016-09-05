@@ -1,7 +1,7 @@
 // Global variables
 
 var locationReq = new XMLHttpRequest();
-var locurl = "https://cors-anywhere.herokuapp.com/http://ip-api.com/json";
+var locurl = "https://freegeoip.net/json/";
 var lat = 0;
 var lon = 0;
 var xmlhttp = "";
@@ -55,11 +55,11 @@ locationReq.onreadystatechange = function() {
     if (locationReq.readyState == 4 && locationReq.status == 200) {
         var location = JSON.parse(locationReq.responseText);
         console.log(location);
-        country = location.country;
+        country = location.country_name;
         city = location.city;
-        region = location.regionName;
-        lat = location.lat;
-        lon = location.lon;
+        region = location.region_name;
+        lat = location.latitude;
+        lon = location.longitude;
         requestLocation();
 
     }
