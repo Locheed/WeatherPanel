@@ -1,7 +1,7 @@
 //Global variables
 
 var locationReq = new XMLHttpRequest();
-var locurl = "http://ip-api.com/json";
+var locurl = "https://cors-anywhere.herokuapp.com/http://ip-api.com/json";
 var lat = 0;
 var lon = 0;
 var xmlhttp = "";
@@ -42,7 +42,7 @@ function success(position) {
   lon = position.coords.longitude;
 
   xmlhttp = new XMLHttpRequest();
-  url = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=dd466cfbfd2578f87edf06abc3100c1a";
+  url = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=dd466cfbfd2578f87edf06abc3100c1a";
   xmlhttp.open("GET", url, true);
   xmlhttp.send();
   requestWeather(); // Calls weather after location is added to JSON link.
@@ -195,7 +195,7 @@ function requestLocation() {
   document.getElementById('coordinates').innerHTML = "Lat: " + Math.round(lat * 100) / 100 + " Lon: " + Math.round(lon * 100) / 100;
 
   xmlhttp = new XMLHttpRequest();
-  url = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=dd466cfbfd2578f87edf06abc3100c1a";
+  url = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=dd466cfbfd2578f87edf06abc3100c1a";
   xmlhttp.open("GET", url, true);
   xmlhttp.send();
   requestWeather(); // Calls weather after location is added to JSON link.
