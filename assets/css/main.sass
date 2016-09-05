@@ -6,6 +6,13 @@ body
   box-sizing: border-box
   overflow-y: hidden
 
+  .not-active
+    pointer-events: none
+    cursor: default
+    font-weight: 600 !important
+    letter-spacing: 0.06em
+    font-size: 1.1em
+
   // Tooltip styling
   .tooltip
     position: relative
@@ -225,16 +232,12 @@ body
 
   // Animations start
   .slide-out
-    animation: out 2500ms ease-in-out forwards
+    animation: out 1000ms ease-in-out forwards
     transform-origin: top right
 
     @keyframes out
       0%
       10%
-        transform: rotate(-1deg)
-      20%
-        transform: rotate(-1deg)
-      30%
         transform: rotate(-1deg)
       40%
         transform: rotate(-8deg)
@@ -243,7 +246,7 @@ body
         transform: translateY(1000px)
 
   .slideIn
-    animation: in 2500ms ease-in-out forwards
+    animation: in 1000ms ease-in-out forwards
 
     @keyframes in
       0%
